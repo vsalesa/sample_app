@@ -1,12 +1,17 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
 <html>
 	<head>
-		<title>
-			Ruby on Rails Tutorial Sample App | <%= @title %>
-		</title>
+		<title><%= @title %></title>
 		<%= csrf_meta_tag %>
+		<%= render 'layouts/stylesheets' %>
 	</head>
 	<body>
-		<%= yield %>
+		<div class="container"> 
+			<%= render :partial => 'layouts/header' %>
+			<section class="round">
+				<%= yield %> 
+			</section>
+		</div>
 	</body>
+	<%= render :partial => 'layouts/footer' %>
 </html>
